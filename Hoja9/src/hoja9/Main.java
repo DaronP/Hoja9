@@ -26,12 +26,13 @@ public class Main {
         String line;
         int contadorYLlave = 0;
         
+        
         while((line = buff.readLine()) != null){
             String[] separate = line.split(",");
             String word_english = separate[0];
-            String word_spanish = separate[1];
+            String word_spanish = separate[0];
             arbol.insert(word_english.hashCode(), word_english, word_spanish);
-            System.out.println(word_english + " " + word_spanish);
+            System.out.println(word_english /*+ " " + word_spanish*/);
             
         }
         
