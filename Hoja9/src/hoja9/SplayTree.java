@@ -26,11 +26,11 @@ public class SplayTree<T extends Comparable<T>, U extends Comparable<U>>
 	     * @param x the item to insert.
 	     * @throws DuplicateItemException if x is already present.
 	     */
-	    public void insert(T key, U value) {
+	    public void insert(T key, U value, U value2) {
 		BinaryNode n;
 		int c;
 		if (root == null) {
-		    root = new BinaryNode(key, value);
+		    root = new BinaryNode(key, value, value2);
 		    return;
 		}
 		splay(key);
@@ -39,7 +39,7 @@ public class SplayTree<T extends Comparable<T>, U extends Comparable<U>>
 			root.value=value;
 		    return;
 		}
-		n = new BinaryNode(key, value);
+		n = new BinaryNode(key, value, value2);
 		if (c < 0) {
 		    n.left = root.left;
 		    n.right = root;
@@ -210,7 +210,7 @@ public class SplayTree<T extends Comparable<T>, U extends Comparable<U>>
 		root = t;
 	    }
 
-	    private static BinaryNode header = new BinaryNode(null, null); // For splay //Modified
+	    private static BinaryNode header = new BinaryNode(null, null, null); // For splay //Modified
 	    
 	    /**
 	     * Internal method to perform a top-down splay.

@@ -17,9 +17,9 @@ import java.util.TreeMap;
 public class Main {
     public static void main(String [] args) throws FileNotFoundException, IOException{
         
-        BinaryTree arbol = new BinaryTree();
+        SplayTree arbol = new SplayTree();
         
-        File words = new File("C:\\Users\\Antonio\\Documents\\NetBeansProjects\\Lab-7\\Hoja_6_Arboles\\src\\hoja_7_arboles\\palabras");
+        File words = new File("C:\\Users\\Andres\\Documents\\GitHub\\Hoja9\\Hoja9\\src\\hoja9\\freedict-eng-spa.txt");
         FileReader read = new FileReader(words);
         BufferedReader buff = new BufferedReader(read);
         
@@ -30,12 +30,12 @@ public class Main {
             String[] separate = line.split(",");
             String word_english = separate[0];
             String word_spanish = separate[1];
-            arbol.insertNode(word_english.hashCode(), word_english, word_spanish);
+            arbol.insert(word_english.hashCode(), word_english, word_spanish);
             System.out.println(word_english + " " + word_spanish);
             
         }
         
-        File sentence = new File("C:\\Users\\Antonio\\Documents\\NetBeansProjects\\HT7\\Hoja_6_Arboles\\src\\hoja_7_arboles\\oraciones");
+        File sentence = new File("C:\\Users\\Andres\\Documents\\GitHub\\Hoja9\\Hoja9\\src\\hoja9\\freedict-eng-spa.txt");
         FileReader readSentence = new FileReader(sentence);
         BufferedReader buffSentence = new BufferedReader(readSentence);
         
@@ -45,7 +45,7 @@ public class Main {
             String[] allWords = linea.split(" ");
             for (int i = 0; i < allWords.length; i++){
                 String variable = allWords[i];
-                System.out.print(arbol.find(variable, variable.hashCode()));
+                System.out.print(arbol.find(variable.hashCode()));
                 
             }
             

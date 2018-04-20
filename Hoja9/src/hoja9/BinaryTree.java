@@ -12,14 +12,16 @@ package hoja9;
  */
 class BinaryNode<T extends Comparable<T>, U extends Comparable<U>>
 {
-    BinaryNode(T theKey, U theValue) {
+    BinaryNode(T theKey, U theValue, U theValue2) {
         key = theKey;
         value=theValue;
+        value2 = theValue2;
         left = right = null;
     }
 
     T key;          // The key in the node
     U value;			//The value associated for the key
+    U value2;
     BinaryNode<T, U> left;         // Left child
     BinaryNode<T, U> right;        // Right child
 }
