@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 
 
@@ -20,7 +22,8 @@ public class Main {
         
         SplayTree arbol = new SplayTree();
         
-        File words = new File("C:\\Users\\Andres\\Documents\\GitHub\\Hoja9\\Hoja9\\src\\hoja9\\freedict-eng-spa.txt");
+   
+        File words = new File("src/hoja9/freedict-eng-spa.txt");
         FileReader read = new FileReader(words);
         BufferedReader buff = new BufferedReader(read);
         
@@ -44,7 +47,7 @@ public class Main {
             
         }
         
-        File sentence = new File("C:\\Users\\Andres\\Documents\\GitHub\\Hoja9\\Hoja9\\src\\hoja9\\oraciones.txt");
+        File sentence = new File("src/hoja9/oraciones.txt");
         FileReader readSentence = new FileReader(sentence);
         BufferedReader buffSentence = new BufferedReader(readSentence);
         
