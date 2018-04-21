@@ -6,7 +6,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.TreeMap;
+import java.util.*;
+
 
 
 /**
@@ -28,11 +29,18 @@ public class Main {
         
         
         while((line = buff.readLine()) != null){
-            String[] separate = line.split(",");
-            String word_english = separate[0];
-            String word_spanish = separate[0];
-            arbol.insert(word_english.hashCode(), word_english, word_spanish);
-            System.out.println(word_english /*+ " " + word_spanish*/);
+            String linea = line.replace("\t", ",");
+            String[] separate = linea.split(",");
+            //System.out.println(Arrays.toString(separate));
+            String word_english;
+            String word_spanish;
+            for(int i = 0; i < separate.length; i++){                                
+                word_english = separate[i];            
+                word_spanish = separate[separate.length-1];
+                arbol.insert(word_english.hashCode(), word_english, word_spanish);
+                //System.out.println(word_english + "------" + word_spanish);
+            }
+            
             
         }
         
