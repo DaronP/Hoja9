@@ -44,7 +44,7 @@ public class Main {
             
         }
         
-        File sentence = new File("C:\\Users\\Andres\\Documents\\GitHub\\Hoja9\\Hoja9\\src\\hoja9\\freedict-eng-spa.txt");
+        File sentence = new File("C:\\Users\\Andres\\Documents\\GitHub\\Hoja9\\Hoja9\\src\\hoja9\\oraciones.txt");
         FileReader readSentence = new FileReader(sentence);
         BufferedReader buffSentence = new BufferedReader(readSentence);
         
